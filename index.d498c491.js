@@ -3044,13 +3044,15 @@ const router = (0, _reactRouterDom.createBrowserRouter)([
             }
         ]
     }
-]);
+], {
+    basename: '/NationNavigator'
+});
 const root = (0, _client.createRoot)(document.querySelector('#root'));
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.RouterProvider), {
     router: router
 }, void 0, false, {
     fileName: "index.jsx",
-    lineNumber: 46,
+    lineNumber: 50,
     columnNumber: 13
 }, undefined));
 
