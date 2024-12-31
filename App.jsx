@@ -1,19 +1,17 @@
-import './App.css'
-import { useState, Profiler, useEffect } from 'react'
-import { Outlet } from 'react-router-dom'
 import Header from './components/Header'
+import { Outlet } from 'react-router-dom'
+
+import './App.css'
+import { useState } from 'react'
 
 const App = () => {
-  const onRenderCallback = (id, phase, actualDuration) => {
-  }
+  const [isDark, setIsDark] = useState(JSON.parse(localStorage.getItem('isDarkMode')))
 
   return (
-    <Profiler id='Chetan' onRender={onRenderCallback}>
     <>
-      <Header />
-      <Outlet/>
+      <Header theme={[isDark, setIsDark]} />
+      <Outlet context={[isDark, setIsDark]} />
     </>
-    </Profiler>
   )
 }
 
